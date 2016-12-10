@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zxx">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="description" content="Your description">
+<meta name="keywords" content="keyword1 keyword2">
+<title>Universal Standard 2.0</title>
+<!-- SET: FAVICON -->
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+
+<link href="https://fonts.googleapis.com/css?family=Hind+Vadodara:300,400,500,600,700" rel="stylesheet">
+<!--[if lt IE 9]>
+<script type="text/javascript">
+  document.createElement("header");
+  document.createElement("nav");
+  document.createElement("section");
+  document.createElement("article");
+  document.createElement("aside");
+  document.createElement("footer");
+</script>
+<![endif]-->
+<!-- SET: STYLESHEET -->
+<link rel="stylesheet" type="text/css" href="css/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/responsive.css">
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script src="js/owl.carousel.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+    $('.logo1').clone().appendTo('.logo');
+    $('.nav').clone().appendTo('.navigetion');
+    
+    $(".nav ul li .sub-menu").parent().prepend('<span></span>') ;
+    
+     if ($(window).width() < 767) {
+         $(".nav ul li a").click(function() {
+            $(this).parent().find('.sub-menu').slideToggle();
+            $(this).parent().toggleClass('active');
+            $(this).parent().siblings().removeClass('active');
+            $(this).parent().siblings().find('.sub-menu').slideUp();
+        });
+     }  
+    $('.nav-icon').click(function(e) {
+        $('.nav-icon').toggleClass('open');
+        $('body').toggleClass('open');
+    });
+    $(".nav ul li:has('.sub-menu')").hover(function(){
+    $(this).parent().parent().parent().css("background", "rgba(255, 255, 255, 0.81)");
+    }, 
+    function(){
+    $(this).parent().parent().parent().css("background", "none");
+    });
+    $('.search-icon').click(function(e) {
+        $(".text-fld1").toggleClass('active')
+    });
+    $('.top-right a').click(function(e) {
+        $('body').toggleClass('open1');
+    });
+    $('a.close').click(function(e) {
+        $('body').removeClass('open1');
+    });
+    <!--
+    // Home Page Specific
+    $('.owl-carousel').owlCarousel({
+            loop:true,
+            autoplay:true,
+            responsiveClass:true,
+            items:1,
+            autoplayTimeout:10000,
+            smartSpeed: 800,
+            //arrow:true,
+            //navigation : true,
+            pagination : true,
+        onTranslate: function() {
+          $('.owl-item').find('video').each(function() {
+            this.play();
+            //this.currentTime = 0;
+            //$("video").prop('muted', true);
+            //$(".mute-video").removeClass('unmute-video');
+          });
+        }
+     })
+//PAGE REFRESH
+        var ww = $(window).width();
+        var limit = 751;
+        function refresh() {
+           ww = $(window).width();
+           var w =  ww<limit ? (location.reload(true)) :  ( ww>limit ? (location.reload(true)) : ww=limit );
+        }
+        
+        var tOut;
+        $(window).resize(function() {
+            var resW = $(window).width();
+            clearTimeout(tOut);
+            if ( (ww>limit && resW<limit) || (ww<limit && resW>limit) ) {        
+                tOut = setTimeout(refresh, 100);
+            }
+        }); 
+    -->
+});
+</script>
+</head>
