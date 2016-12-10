@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="zxx">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="description" content="Your description">
+<meta name="keywords" content="keyword1 keyword2">
+<title>Universal Standard 2.0</title>
+<!-- SET: FAVICON -->
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+
+<link href="https://fonts.googleapis.com/css?family=Hind+Vadodara:300,400,500,600,700" rel="stylesheet">
+<!--[if lt IE 9]>
+<script type="text/javascript">
+  document.createElement("header");
+  document.createElement("nav");
+  document.createElement("section");
+  document.createElement("article");
+  document.createElement("aside");
+  document.createElement("footer");
+</script>
+<![endif]-->
+<!-- SET: STYLESHEET -->
+<link rel="stylesheet" type="text/css" href="css/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/responsive.css">
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script src="js/owl.carousel.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+	$('.logo1').clone().appendTo('.logo');
+	$('.nav').clone().appendTo('.navigetion');
+	
+	$(".nav ul li .sub-menu").parent().prepend('<span></span>') ;
+	
+	 if ($(window).width() < 767) {
+		 $(".nav ul li a").click(function() {
+			$(this).parent().find('.sub-menu').slideToggle();
+			$(this).parent().toggleClass('active');
+			$(this).parent().siblings().removeClass('active');
+			$(this).parent().siblings().find('.sub-menu').slideUp();
+		});
+	 }	
+	
+	$('.nav-icon').click(function(e) {
+		$('.nav-icon').toggleClass('open');
+		$('body').toggleClass('open');
+		
+	});
+	
+	$(".nav ul li:has('.sub-menu')").hover(function(){
+	$(this).parent().parent().parent().css("background", "rgba(255, 255, 255, 0.81)");
+	}, function(){
+	$(this).parent().parent().parent().css("background", "none");
+	});
+		
+	$('.owl-carousel').owlCarousel({
+			loop:true,
+			autoplay:true,
+			responsiveClass:true,
+			items:1,
+			autoplayTimeout:10000,
+			smartSpeed: 800,
+			//arrow:true,
+			//navigation : true,
+			pagination : true,
+		onTranslate: function() {
+		  $('.owl-item').find('video').each(function() {
+			this.play();
+			//this.currentTime = 0;
+			//$("video").prop('muted', true);
+			//$(".mute-video").removeClass('unmute-video');
+		  });
+		}
+	 })
+	 
+	 $('.search-icon').click(function(e) {
+         $(".text-fld1").toggleClass('active')
+     });
+	 
+	 $('.top-right a').click(function(e) {
+		$('body').toggleClass('open1');
+	 });
+	$('a.close').click(function(e) {
+		$('body').removeClass('open1');
+	});
+
+//PAGE REFRESH
+		var ww = $(window).width();
+		var limit = 751;
+		function refresh() {
+		   ww = $(window).width();
+		   var w =  ww<limit ? (location.reload(true)) :  ( ww>limit ? (location.reload(true)) : ww=limit );
+		}
+		
+		var tOut;
+		$(window).resize(function() {
+			var resW = $(window).width();
+			clearTimeout(tOut);
+			if ( (ww>limit && resW<limit) || (ww<limit && resW>limit) ) {        
+				tOut = setTimeout(refresh, 100);
+			}
+		});
+
+});
+</script>
+</head>
+
+<body>
+<!--wrapper-->
+<div class="navigetion"></div>
+<div class="drawer">
+	<div class="title1">
+    	<h3>My Bag</h3>
+        <a href="#" class="close">&times;</a>
+        <div class="clear"></div>
+    </div>
+    <ul>
+    	<li>
+        	<div class="left-img">
+            	<img src="images/img5.jpg" alt="">
+            </div>
+            <div class="right-cont">
+            	<a href="#">Elbe Shirt</a>
+                <p>L_22-24 / Universal Black</p>
+                <p class="add-block">
+                    <span id="minus1" class="minus">-</span>
+                    <input id="qty1" type="text" value="1" class="qty"/>
+                    <span id="add1" class="add">+</span>
+                  	
+                    
+                </p>
+                <small>$90</small>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </li>
+    </ul>
+    <div class="payment">
+    	<div class="grid__item two-thirds">
+        	<p>SUBTOTAL</p>
+        </div>
+        <div class="grid__item two-thirds text-right">
+        	<p>$160.00</p>
+        </div>
+        <div class="clear"></div>
+        <p class="text-center ajaxcart__note">Shipping &amp; taxes calculated at checkout</p>
+        <button type="submit" class="btn--secondary btn--full cart__checkout" name="checkout">
+          Check Out &rarr;
+        </button>
+        <div class="additional_checkout_buttons"><button name="goto_pp" type="submit" id="paypal-express-button" class="additional-checkout-button additional-checkout-button--paypal-express" value="paypal_express">Checkout with <img alt="PayPal" src="images/easy-checkout-btn-paypal-cadb680457a51ea1df32214b16adad91083c80679c7f5017e35c731832e59b90.png" /></button></div>
+        
+      </div>
+        
+    </div>
+<div class="wrapper">
+
+<!--header-->
+<header class="header">
+    <div class="top-section">
+    	<div class="top-left">
+        	<a href="#">Login</a>
+            <a href="javascript:void(0);" class="search-icon"><img src="images/icon1.png" width="12" height="12" alt="icon1"></a>
+            <input type="text" value="search" class="text-fld1" onclick="this.value='';" onfocus="this.select()" onblur="this.value=!this.value?'search':this.value;">
+            <div class="clear"></div>
+        </div>
+        <div class="top-right">
+        	<p>Free US Shipping & Returns<br>
+Free International Shipping Over $300</p>
+            <a href="#">3</a>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="nav-main">
+    	<div class="logo"></div>
+    	<div class="nav-icon"><span></span><span></span><span></span></div>
+        <div class="clear"></div>
+        <nav class="nav">
+            <ul>
+                <li><a href="#">Shop</a>
+                    <div class="sub-menu">
+                        <ul>
+                            <li><a href="#">STarter Kit</a></li>
+                            <li><a href="#">Coming Soon</a></li>
+                            <li><a href="#">Best Sellers</a></li>
+                            <li><a href="#">Inspiration</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">Dresses</a></li>
+                            <li><a href="#">Tops/tees</a></li>
+                            <li><a href="#">Sweaters</a></li>
+                            <li><a href="#">Jeans/pants </a></li>
+                            <li><a href="#">skirts</a></li>
+                            <li><a href="#">jackets/outerwear</a></li>
+                            <li><a href="#">See all</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">Accessories</a></li>
+                            <li><a href="#">Gift Cards</a></li>
+                            <li><a href="#">Showroom</a></li>
+                            <li><a href="#">Promotions</a></li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                </li>
+                <li><a href="#">About Us</a>
+                    <div class="sub-menu">
+                        <ul>
+                            <li><a href="#">Our Story</a></li>
+                            <li><a href="#">Material Matters</a></li>
+                            <li><a href="#">Press</a></li>
+                            <li><a href="#">Reviews</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">contact us</a></li>
+                            <li><a href="#">Visit Us</a></li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                </li>
+                <li class="last1"><a href="#" class="logo1"><img src="images/logo.png" width="399" height="20" alt="logo"></a></li>
+                
+                
+                <li><a href="#">inside</a>
+                	<div class="sub-menu">
+                        <ul>
+                            <li><a href="#">#YoUniversalstandard</a></li>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">facebook Pinterest</a></li>
+                            <li><a href="#">Tumblr</a></li>
+                            <li><a href="#">Blog</a></li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                </li>
+                <li class="last"><a href="#">Showroom</a></li>
+            </ul>
+           
+            
+            <div class="clear"></div>
+        </nav>
+    </div>
+</header>
+<!--header end-->
+<!--banner-->
+
+
+
+<div class="banner">
+	<ul id="owl-demo" class="owl-carousel">
+    	<li class="item" style="background:url(images/slider-img3.jpg) no-repeat; background-size:cover; ">
+        	<div class="banner-cont">
+            	<h1>Home page 
+Headline Here</h1>
+                <p>Everyday Elevated Essentials<br>
+Sizes 10-28</p>
+                <a href="#">SHOP NOW</a>
+            </div>
+        </li>
+        <li class="item">
+            <video width="100%" height="100%" style="background:#fff;" controls loop>
+               <source src="videos/sea_and_girl.mp4" type="video/mp4">
+               <source src="videos/sea_and_girl.webm" type="video/webm">
+               <source src="videos/sea_and_girl.ogg" type="video/ogg">
+            </video>
+        	<!--<div class="banner-cont">
+            	<h1>Home page 
+Headline Here</h1>
+                <p>Everyday Elevated Essentials<br>
+Sizes 10-28</p>
+                <a href="#">SHOP NOW</a>
+            </div>-->
+        </li>
+        <li class="item" style="background:url(images/slider-img3.jpg) no-repeat; background-size:cover; ">
+        	<div class="banner-cont">
+            	<h1>Home page 
+Headline Here</h1>
+                <p>Everyday Elevated Essentials<br>
+Sizes 10-28</p>
+                <a href="#">SHOP NOW</a>
+            </div>
+        </li>
+        <li class="item" style="background:url(images/slider-img3.jpg) no-repeat; background-size:cover; ">
+        	<div class="banner-cont">
+            	<h1>Home page 
+Headline Here</h1>
+                <p>Everyday Elevated Essentials<br>
+Sizes 10-28</p>
+                <a href="#">SHOP NOW</a>
+            </div>
+        </li>
+    </ul>
+</div>
+<!--banner emd-->
+
+
+<!-- footer -->
+<footer class="footer">
+	<div class="footer-in">
+    	<div class="text-box">
+    	<input type="text" value="JOIN OUR EMAIL LIST" class="text-fld" onclick="this.value='';" onfocus="this.select()" onblur="this.value=!this.value?'JOIN OUR EMAIL LIST':this.value;">
+       <a href="javascript:void(0);"> <span>+</span></a>
+        </div>
+    	<div class="fot-nav">
+        	<ul>
+            	<li><a href="#">Your Account</a></li>
+                <li><a href="#">Returns</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li class="no_bg"><a href="#">Privacy Policy</a></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <div class="icons">
+        	
+        	<ul>
+            	<li>FOLLOW US</li>
+                <li><a href="#"><img src="images/icon3.jpg" width="8" height="12" alt="icon"></a></li>
+                <li><a href="#"><img src="images/icon4.jpg" width="10" height="12" alt="icon"></a></li>
+                <li><a href="#"><img src="images/icon5.jpg" width="10" height="12" alt="icon"></a></li>
+                <li><a href="#"><img src="images/icon6.jpg" width="7" height="12" alt="icon"></a></li>
+                <li><a href="#"><img src="images/icon7.jpg" width="11" height="12" alt="icon"></a></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</footer>
+<!--footer end-->
+
+</div>
+<!--wrapper end-->
+</body>
+ 
+</html>
