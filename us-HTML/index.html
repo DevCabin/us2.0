@@ -102,85 +102,7 @@ $(document).ready(function () {
     -->
 });
 </script>
-</head>
-=======
-	$('.logo1').clone().appendTo('.logo');
-	$('.nav').clone().appendTo('.navigetion');
-	
-	$(".nav ul li .sub-menu").parent().prepend('<span></span>') ;
-	
-	 if ($(window).width() < 767) {
-		 $(".nav ul li a").click(function() {
-			$(this).parent().find('.sub-menu').slideToggle();
-			$(this).parent().toggleClass('active');
-			$(this).parent().siblings().removeClass('active');
-			$(this).parent().siblings().find('.sub-menu').slideUp();
-		});
-	 }	
-	
-	$('.nav-icon').click(function(e) {
-		$('.nav-icon').toggleClass('open');
-		$('body').toggleClass('open');
-		
-	});
-	
-	$(".nav ul li:has('.sub-menu')").hover(function(){
-	$(this).parent().parent().parent().css("background", "rgba(255, 255, 255, 0.81)");
-	}, function(){
-	$(this).parent().parent().parent().css("background", "none");
-	});
-		
-	$('.owl-carousel').owlCarousel({
-			loop:true,
-			autoplay:true,
-			responsiveClass:true,
-			items:1,
-			autoplayTimeout:10000,
-			smartSpeed: 800,
-			//arrow:true,
-			//navigation : true,
-			pagination : true,
-		onTranslate: function() {
-		  $('.owl-item').find('video').each(function() {
-			this.play();
-			//this.currentTime = 0;
-			//$("video").prop('muted', true);
-			//$(".mute-video").removeClass('unmute-video');
-		  });
-		}
-	 })
-	 
-	 $('.search-icon').click(function(e) {
-         $(".text-fld1").toggleClass('active')
-     });
-	 
-	 $('.top-right a').click(function(e) {
-		$('body').toggleClass('open1');
-	 });
-	$('a.close').click(function(e) {
-		$('body').removeClass('open1');
-	});
 
-//PAGE REFRESH
-		var ww = $(window).width();
-		var limit = 751;
-		function refresh() {
-		   ww = $(window).width();
-		   var w =  ww<limit ? (location.reload(true)) :  ( ww>limit ? (location.reload(true)) : ww=limit );
-		}
-		
-		var tOut;
-		$(window).resize(function() {
-			var resW = $(window).width();
-			clearTimeout(tOut);
-			if ( (ww>limit && resW<limit) || (ww<limit && resW>limit) ) {        
-				tOut = setTimeout(refresh, 100);
-			}
-		});
-
-});
-</script>
-</head>
 
 <body>
 <!--wrapper-->
@@ -319,10 +241,11 @@ Free International Shipping Over $300</p>
     </div>
 </header>
 <!--header end-->
+
+
+
+
 <!--banner-->
-
-
-
 <div class="banner">
 	<ul id="owl-demo" class="owl-carousel">
     	<li class="item" style="background:url(images/slider-img3.jpg) no-repeat; background-size:cover; ">
@@ -368,7 +291,13 @@ Sizes 10-28</p>
         </li>
     </ul>
 </div>
-<!--banner emd-->
+<!--banner end-->
+
+
+
+
+
+
 
 
 <!-- footer -->
@@ -410,4 +339,4 @@ Sizes 10-28</p>
 </body>
  
 </html>
->>>>>>> origin/master
+

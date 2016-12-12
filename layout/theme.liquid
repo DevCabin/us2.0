@@ -12,7 +12,7 @@
   {% endif %}
 
   <!-- Title and description ================================================== -->
-  <title> Universal Standard {{ page_title }}{% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
+  <title>{{ page_title }}{% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
   </title>
 
   {% if page_description %}
@@ -25,9 +25,14 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
   <meta name="theme-color" content="{{ settings.color_primary }}">
 
-  <!-- CSS ================================================== -->
-  {{ 'timber.scss.css' | asset_url | stylesheet_tag }}
-  {{ 'us2.scss.css' | asset_url | stylesheet_tag }}
+  <!-- CSS ================================================== 
+  {{ 'timber.scss.css' | asset_url | stylesheet_tag }} 
+   -->
+  <!-- begin design files -->
+  <link href="https://fonts.googleapis.com/css?family=Hind+Vadodara:300,400,500,600,700" rel="stylesheet">
+  {{ 'style.scss' | asset_url | stylesheet_tag }}
+  {{ 'owl.theme.default.scss' | asset_url | stylesheet_tag }}
+  {{ 'responsive.scss' | asset_url | stylesheet_tag }}
 
   <!-- Header hook for plugins ================================================== -->
   {{ content_for_header }}
@@ -35,6 +40,106 @@
 
   {{ '//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js' | script_tag }}
   {{ 'modernizr.min.js' | asset_url | script_tag }}
+
+  <!-- JS ==================================================== -->
+  <!-- design files -->
+  {{ 'owl.carousel.js' | asset_url | script_tag }}
+
+  <!-- inner 2 -->
+  {{ 'slick.scss' | asset_url | stylesheet_tag }}
+  {{ 'slick-theme.scss' | asset_url | stylesheet_tag }}
+  <!-- inner 2 -->
+
+  <script type="text/javascript">
+  $(document).ready(function () {
+
+    $('.logo1').clone().appendTo('.logo');
+    $('.nav').clone().appendTo('.navigetion');
+    
+    $(".nav ul li .sub-menu").parent().prepend('<span></span>') ;
+    
+     if ($(window).width() < 767) {
+         $(".nav ul li a").click(function() {
+            $(this).parent().find('.sub-menu').slideToggle();
+            $(this).parent().toggleClass('active');
+            $(this).parent().siblings().removeClass('active');
+            $(this).parent().siblings().find('.sub-menu').slideUp();
+        });
+     }  
+    $('.nav-icon').click(function(e) {
+        $('.nav-icon').toggleClass('open');
+        $('body').toggleClass('open');
+    });
+    $(".nav ul li:has('.sub-menu')").hover(function(){
+    $(this).parent().parent().parent().css("background", "rgba(255, 255, 255, 0.81)");
+    }, 
+    function(){
+    $(this).parent().parent().parent().css("background", "none");
+    });
+    $('.search-icon').click(function(e) {
+        $(".text-fld1").toggleClass('active')
+    });
+    $('.top-right a').click(function(e) {
+        $('body').toggleClass('open1');
+    });
+    $('a.close').click(function(e) {
+        $('body').removeClass('open1');
+    });
+    <!--
+    // Home Page Specific
+    $('.owl-carousel').owlCarousel({
+            loop:true,
+            autoplay:true,
+            responsiveClass:true,
+            items:1,
+            autoplayTimeout:10000,
+            smartSpeed: 800,
+            //arrow:true,
+            //navigation : true,
+            pagination : true,
+        onTranslate: function() {
+          $('.owl-item').find('video').each(function() {
+            this.play();
+            //this.currentTime = 0;
+            //$("video").prop('muted', true);
+            //$(".mute-video").removeClass('unmute-video');
+          });
+        }
+     })
+//PAGE REFRESH
+        var ww = $(window).width();
+        var limit = 751;
+        function refresh() {
+           ww = $(window).width();
+           var w =  ww<limit ? (location.reload(true)) :  ( ww>limit ? (location.reload(true)) : ww=limit );
+        }
+        
+        var tOut;
+        $(window).resize(function() {
+            var resW = $(window).width();
+            clearTimeout(tOut);
+            if ( (ww>limit && resW<limit) || (ww<limit && resW>limit) ) {        
+                tOut = setTimeout(refresh, 100);
+            }
+        }); 
+    -->
+    <!--
+    // Inner 1 (category) Page Specific
+    $('.size1, .size2').hide();
+    $('.block a.add').click(function(e) {
+        $(this).hide();
+        $(this).parent()
+        .find('.size1')
+        .show()
+        .click(function(e) {
+            $(this).hide();
+            $(this).parent().find('.size2').show();
+        });;
+    }); 
+    -->
+});
+</script>
+
 
   {% comment %}
     If you store has customer accounts disabled, you can remove the following JS file
@@ -50,6 +155,157 @@
 {% endcomment %}
 <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
 
+
+
+
+
+<!--wrapper-->
+<div class="navigetion"></div>
+<div class="drawer">
+  <div class="title1">
+      <h3>My Bag</h3>
+        <a href="#" class="close">&times;</a>
+        <div class="clear"></div>
+    </div>
+    <ul>
+      <li>
+          <div class="left-img">
+              <img src="{{'img5.jpg'| asset_url }}" alt="">
+            </div>
+            <div class="right-cont">
+              <a href="#">Elbe Shirt</a>
+                <p>L_22-24 / Universal Black</p>
+                <p class="add-block">
+                    <span id="minus1" class="minus">-</span>
+                    <input id="qty1" type="text" value="1" class="qty"/>
+                    <span id="add1" class="add">+</span>
+                    
+                    
+                </p>
+                <small>$90</small>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </li>
+    </ul>
+    <div class="payment">
+      <div class="grid__item two-thirds">
+          <p>SUBTOTAL</p>
+        </div>
+        <div class="grid__item two-thirds text-right">
+          <p>$160.00</p>
+        </div>
+        <div class="clear"></div>
+        <p class="text-center ajaxcart__note">Shipping &amp; taxes calculated at checkout</p>
+        <button type="submit" class="btn--secondary btn--full cart__checkout" name="checkout">
+          Check Out &rarr;
+        </button>
+        <div class="additional_checkout_buttons"><button name="goto_pp" type="submit" id="paypal-express-button" class="additional-checkout-button additional-checkout-button--paypal-express" value="paypal_express">Checkout with <img alt="PayPal" src="images/easy-checkout-btn-paypal-cadb680457a51ea1df32214b16adad91083c80679c7f5017e35c731832e59b90.png" /></button></div>
+        
+      </div>
+        
+    </div>
+<div class="wrapper">
+
+<!--header-->
+<header class="header">
+    <div class="top-section">
+      <div class="top-left">
+          <a href="#">Login</a>
+            <a href="javascript:void(0);" class="search-icon"><img src="{{'icon1.png'| asset_url }}" width="12" height="12" alt="icon1"></a>
+            <input type="text" value="search" class="text-fld1" onclick="this.value='';" onfocus="this.select()" onblur="this.value=!this.value?'search':this.value;">
+            <div class="clear"></div>
+        </div>
+        <div class="top-right">
+          <p>Free US Shipping & Returns<br>
+Free International Shipping Over $300</p>
+            <a href="#">3</a>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="nav-main">
+      <div class="logo"></div>
+      <div class="nav-icon"><span></span><span></span><span></span></div>
+        <div class="clear"></div>
+        <nav class="nav">
+            <ul>
+                <li><a href="#">Shop</a>
+                    <div class="sub-menu">
+                        <ul>
+                            <li><a href="#">STarter Kit</a></li>
+                            <li><a href="#">Coming Soon</a></li>
+                            <li><a href="#">Best Sellers</a></li>
+                            <li><a href="#">Inspiration</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">Dresses</a></li>
+                            <li><a href="#">Tops/tees</a></li>
+                            <li><a href="#">Sweaters</a></li>
+                            <li><a href="#">Jeans/pants </a></li>
+                            <li><a href="#">skirts</a></li>
+                            <li><a href="#">jackets/outerwear</a></li>
+                            <li><a href="#">See all</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">Accessories</a></li>
+                            <li><a href="#">Gift Cards</a></li>
+                            <li><a href="#">Showroom</a></li>
+                            <li><a href="#">Promotions</a></li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                </li>
+                <li><a href="#">About Us</a>
+                    <div class="sub-menu">
+                        <ul>
+                            <li><a href="#">Our Story</a></li>
+                            <li><a href="#">Material Matters</a></li>
+                            <li><a href="#">Press</a></li>
+                            <li><a href="#">Reviews</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">contact us</a></li>
+                            <li><a href="#">Visit Us</a></li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                </li>
+                <li class="last1"><a href="#" class="logo1"><img src="{{ 'logo.png' | asset_url }}" width="399" height="20" alt="logo"></a></li>
+                
+                
+                <li><a href="#">inside</a>
+                  <div class="sub-menu">
+                        <ul>
+                            <li><a href="#">#YoUniversalstandard</a></li>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">facebook Pinterest</a></li>
+                            <li><a href="#">Tumblr</a></li>
+                            <li><a href="#">Blog</a></li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                </li>
+                <li class="last"><a href="#">Showroom</a></li>
+            </ul>
+           
+            
+            <div class="clear"></div>
+        </nav>
+    </div>
+</header>
+<!--header end-->
+
+
+
+
+
+
+
+
+
+
+<!--
   <div id="NavDrawer" class="drawer drawer--left">
     <div class="drawer__header">
       <div class="drawer__title h3">{{ 'layout.drawers.browse' | t }}</div>
@@ -60,10 +316,12 @@
         </button>
       </div>
     </div>
-    <!-- begin mobile-nav -->
+    <!-- begin mobile-nav --
     <ul class="mobile-nav">
       <li class="mobile-nav__item mobile-nav__search">
+        {% comment %}
         {% include 'search-bar' %}
+        {% endcomment %}
       </li>
       {% for link in linklists.main-menu.links %}
         {% comment %}
@@ -129,7 +387,7 @@
         {% endif %}
       {% endif %}
     </ul>
-    <!-- //mobile-nav -->
+    <!-- //mobile-nav --
   </div>
   {% if settings.ajax_cart_method == "drawer" %}
     <div id="CartDrawer" class="drawer drawer--right">
@@ -213,7 +471,9 @@
             {% endif %}
 
             <div class="site-header__search">
+              {% comment %}
               {% include 'search-bar' %}
+              {% endcomment %}
             </div>
           </div>
         </div>
@@ -230,7 +490,7 @@
             More info on linklists:
               - http://docs.shopify.com/themes/liquid-variables/linklists
           {% endcomment %}
-          <!-- begin site-nav -->
+          <!-- begin site-nav --
           <ul class="site-nav" id="AccessibleNav">
             {% for link in linklists.main-menu.links %}
               {% comment %}
@@ -261,7 +521,7 @@
               {% endif %}
             {% endfor %}
           </ul>
-          <!-- //site-nav -->
+          <!-- //site-nav --
         </div>
         <div class="large--hide medium-down--show">
           <div class="grid">
@@ -289,12 +549,65 @@
     </nav>
 
     <main class="wrapper main-content" role="main">
-
+<!-- "content for layout" -->
       {{ content_for_layout }}
-
+<!-- // "content for layout" -->
     </main>
 
-    <!-- begin site-footer -->
+
+<!-- Design Specific -->
+
+
+<!-- footer -->
+<footer class="footer">
+  <div class="footer-in">
+      <div class="text-box">
+      <input type="text" value="JOIN OUR EMAIL LIST" class="text-fld" onclick="this.value='';" onfocus="this.select()" onblur="this.value=!this.value?'JOIN OUR EMAIL LIST':this.value;">
+       <a href="javascript:void(0);"> <span>+</span></a>
+        </div>
+      <div class="fot-nav">
+          <ul>
+              <li><a href="#">Your Account</a></li>
+                <li><a href="#">Returns</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li class="no_bg"><a href="#">Privacy Policy</a></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <div class="icons">
+          
+          <ul>
+              <li>FOLLOW US</li>
+                <li><a href="#"><img src="{{'icon3.jpg' | asset_url }}" width="8" height="12" alt="facebook icon"></a></li>
+                <li><a href="#"><img src="{{'icon4.jpg' | asset_url }}" width="10" height="12" alt="Pinterest icon"></a></li>
+                <li>
+                  <a href="{{ settings.social_twitter_link }}" title="{{ shop.name }} on Twitter">
+                    <img src="{{'icon5.jpg' | asset_url }}" width="10" height="12" alt="twitter icon">
+                  </a>
+                </li>
+
+                <li><a href="#"><img src="{{'icon6.jpg' | asset_url }}" width="7" height="12" alt="tumblr icon"></a></li>
+                <li><a href="#"><img src="{{'icon7.jpg' | asset_url }}" width="11" height="12" alt="instagram icon"></a></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</footer>
+<!--footer end--
+
+</div>
+<!--wrapper end--
+</body>
+ 
+</html>
+
+<!-- END Design code, back to timber -->
+
+
+
+    <!-- begin site-footer --
     <footer class="site-footer small--text-center" role="contentinfo">
       <div class="wrapper">
         <div class="grid">
@@ -388,9 +701,9 @@
         </div>
       </div>
     </footer>
-    <!-- //site-footer -->
-  </div>
-
+    <!-- //site-footer --
+  </div> 
+   -->
   {{ 'fastclick.min.js' | asset_url | script_tag }}
   {{ 'timber.js' | asset_url | script_tag }}
 

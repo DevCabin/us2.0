@@ -79,56 +79,7 @@ $(document).ready(function () {
 });
 </script>
 </head>
-=======
-	$('.logo1').clone().appendTo('.logo');
-	$('.nav').clone().appendTo('.navigetion');
-	
-	$(".nav ul li .sub-menu").parent().prepend('<span></span>') ;
-	
-	 if ($(window).width() < 767) {
-		 $(".nav ul li a").click(function() {
-			$(this).parent().find('.sub-menu').slideToggle();
-			$(this).parent().toggleClass('active');
-			$(this).parent().siblings().removeClass('active');
-			$(this).parent().siblings().find('.sub-menu').slideUp();
-		});
-	 }	
-	$('.nav-icon').click(function(e) {
-		$('.nav-icon').toggleClass('open');
-		$('body').toggleClass('open');
-	});
-	
-	$(".nav ul li:has('.sub-menu')").hover(function(){
-	$(this).parent().parent().parent().css("background", "rgba(255, 255, 255, 0.81)");
-	}, function(){
-	$(this).parent().parent().parent().css("background", "none");
-	});
-	
-	$('.search-icon').click(function(e) {
-         $(".text-fld1").toggleClass('active')
-     });
-	
-	$('.size1, .size2').hide();
-	$('.block a.add').click(function(e) {
-		$(this).hide();
-		$(this).parent()
-		.find('.size1')
-		.show()
-		.click(function(e) {
-			$(this).hide();
-            $(this).parent().find('.size2').show();
-        });;
-    });	
-	
-$('.top-right a').click(function(e) {
-	$('body').toggleClass('open1');
-});
-$('a.close').click(function(e) {
-	$('body').removeClass('open1');
-});
-});
-</script>
-</head>
+
 
 <body>
 <!--wrapper-->
@@ -267,6 +218,9 @@ Free International Shipping Over $300</p>
     </div>
 </header>
 <!--header end-->
+
+
+
 <!--banner-->
 <div class="inner-banner">
 	<div class="inner-banner-in" style="background:url(images/inner-banner.jpg) no-repeat; background-size:cover; ">
@@ -1256,6 +1210,12 @@ Free International Shipping Over $300</p>
     </div>
 </div>
 
+
+
+
+
+
+
 <!-- footer -->
 <footer class="footer">
 	<div class="footer-in">
@@ -1295,4 +1255,4 @@ Free International Shipping Over $300</p>
 </body>
  
 </html>
->>>>>>> origin/master
+
