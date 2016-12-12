@@ -1,0 +1,1298 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="description" content="Your description">
+<meta name="keywords" content="keyword1 keyword2">
+<title>Universal Standard 2.0</title>
+<!-- SET: FAVICON -->
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+
+<link href="https://fonts.googleapis.com/css?family=Hind+Vadodara:300,400,500,600,700" rel="stylesheet">
+<!--[if lt IE 9]>
+<script type="text/javascript">
+  document.createElement("header");
+  document.createElement("nav");
+  document.createElement("section");
+  document.createElement("article");
+  document.createElement("aside");
+  document.createElement("footer");
+</script>
+<![endif]-->
+<!-- SET: STYLESHEET -->
+<link rel="stylesheet" type="text/css" href="css/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/responsive.css">
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script src="js/owl.carousel.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+
+    $('.logo1').clone().appendTo('.logo');
+    $('.nav').clone().appendTo('.navigetion');
+    
+    $(".nav ul li .sub-menu").parent().prepend('<span></span>') ;
+    
+     if ($(window).width() < 767) {
+         $(".nav ul li a").click(function() {
+            $(this).parent().find('.sub-menu').slideToggle();
+            $(this).parent().toggleClass('active');
+            $(this).parent().siblings().removeClass('active');
+            $(this).parent().siblings().find('.sub-menu').slideUp();
+        });
+     }  
+    $('.nav-icon').click(function(e) {
+        $('.nav-icon').toggleClass('open');
+        $('body').toggleClass('open');
+    });
+    $(".nav ul li:has('.sub-menu')").hover(function(){
+    $(this).parent().parent().parent().css("background", "rgba(255, 255, 255, 0.81)");
+    }, 
+    function(){
+    $(this).parent().parent().parent().css("background", "none");
+    });
+    $('.search-icon').click(function(e) {
+        $(".text-fld1").toggleClass('active')
+    });
+    $('.top-right a').click(function(e) {
+        $('body').toggleClass('open1');
+    });
+    $('a.close').click(function(e) {
+        $('body').removeClass('open1');
+    });
+    <!--
+    // Inner 1 (category) Page Specific
+    $('.size1, .size2').hide();
+    $('.block a.add').click(function(e) {
+        $(this).hide();
+        $(this).parent()
+        .find('.size1')
+        .show()
+        .click(function(e) {
+            $(this).hide();
+            $(this).parent().find('.size2').show();
+        });;
+    }); 
+    -->
+});
+</script>
+</head>
+=======
+	$('.logo1').clone().appendTo('.logo');
+	$('.nav').clone().appendTo('.navigetion');
+	
+	$(".nav ul li .sub-menu").parent().prepend('<span></span>') ;
+	
+	 if ($(window).width() < 767) {
+		 $(".nav ul li a").click(function() {
+			$(this).parent().find('.sub-menu').slideToggle();
+			$(this).parent().toggleClass('active');
+			$(this).parent().siblings().removeClass('active');
+			$(this).parent().siblings().find('.sub-menu').slideUp();
+		});
+	 }	
+	$('.nav-icon').click(function(e) {
+		$('.nav-icon').toggleClass('open');
+		$('body').toggleClass('open');
+	});
+	
+	$(".nav ul li:has('.sub-menu')").hover(function(){
+	$(this).parent().parent().parent().css("background", "rgba(255, 255, 255, 0.81)");
+	}, function(){
+	$(this).parent().parent().parent().css("background", "none");
+	});
+	
+	$('.search-icon').click(function(e) {
+         $(".text-fld1").toggleClass('active')
+     });
+	
+	$('.size1, .size2').hide();
+	$('.block a.add').click(function(e) {
+		$(this).hide();
+		$(this).parent()
+		.find('.size1')
+		.show()
+		.click(function(e) {
+			$(this).hide();
+            $(this).parent().find('.size2').show();
+        });;
+    });	
+	
+$('.top-right a').click(function(e) {
+	$('body').toggleClass('open1');
+});
+$('a.close').click(function(e) {
+	$('body').removeClass('open1');
+});
+});
+</script>
+</head>
+
+<body>
+<!--wrapper-->
+<div class="navigetion"></div>
+<div class="drawer">
+	<div class="title1">
+    	<h3>My Bag</h3>
+        <a href="#" class="close">&times;</a>
+        <div class="clear"></div>
+    </div>
+    <ul>
+    	<li>
+        	<div class="left-img">
+            	<img src="images/img5.jpg" alt="">
+            </div>
+            <div class="right-cont">
+            	<a href="#">Elbe Shirt</a>
+                <p>L_22-24 / Universal Black</p>
+                <p class="add-block">
+                    <span id="minus1" class="minus">-</span>
+                    <input id="qty1" type="text" value="1" class="qty"/>
+                    <span id="add1" class="add">+</span>
+                  	
+                    
+                </p>
+                <small>$90</small>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </li>
+    </ul>
+    <div class="payment">
+    	<div class="grid__item two-thirds">
+        	<p>SUBTOTAL</p>
+        </div>
+        <div class="grid__item two-thirds text-right">
+        	<p>$160.00</p>
+        </div>
+        <div class="clear"></div>
+        <p class="text-center ajaxcart__note">Shipping &amp; taxes calculated at checkout</p>
+        <button type="submit" class="btn--secondary btn--full cart__checkout" name="checkout">
+          Check Out &rarr;
+        </button>
+        <div class="additional_checkout_buttons"><button name="goto_pp" type="submit" id="paypal-express-button" class="additional-checkout-button additional-checkout-button--paypal-express" value="paypal_express">Checkout with <img alt="PayPal" src="images/easy-checkout-btn-paypal-cadb680457a51ea1df32214b16adad91083c80679c7f5017e35c731832e59b90.png" /></button></div>
+        
+      </div>
+        
+    </div>
+<div class="wrapper wrapper1">
+
+<!--header-->
+<header class="header">
+    <div class="top-section">
+    	<div class="top-left">
+        	<a href="#">Login</a>
+            <a href="javascript:void(0);" class="search-icon"><img src="images/icon1.png" width="12" height="12" alt="icon1"></a>
+            <input type="text" value="search" class="text-fld1" onclick="this.value='';" onfocus="this.select()" onblur="this.value=!this.value?'search':this.value;">
+            <div class="clear"></div>
+        </div>
+        <div class="top-right">
+        	<p>Free US Shipping & Returns<br>
+Free International Shipping Over $300</p>
+            <a href="#">3</a>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="nav-main">
+    	<div class="logo"></div>
+    	<div class="nav-icon"><span></span><span></span><span></span></div>
+        <div class="clear"></div>
+        <nav class="nav">
+            <ul>
+                <li><a href="#">Shop</a>
+                    <div class="sub-menu">
+                        <ul>
+                            <li><a href="#">STarter Kit</a></li>
+                            <li><a href="#">Coming Soon</a></li>
+                            <li><a href="#">Best Sellers</a></li>
+                            <li><a href="#">Inspiration</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">Dresses</a></li>
+                            <li><a href="#">Tops/tees</a></li>
+                            <li><a href="#">Sweaters</a></li>
+                            <li><a href="#">Jeans/pants </a></li>
+                            <li><a href="#">skirts</a></li>
+                            <li><a href="#">jackets/outerwear</a></li>
+                            <li><a href="#">See all</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">Accessories</a></li>
+                            <li><a href="#">Gift Cards</a></li>
+                            <li><a href="#">Showroom</a></li>
+                            <li><a href="#">Promotions</a></li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                </li>
+                <li><a href="#">About Us</a>
+                    <div class="sub-menu">
+                        <ul>
+                            <li><a href="#">Our Story</a></li>
+                            <li><a href="#">Material Matters</a></li>
+                            <li><a href="#">Press</a></li>
+                            <li><a href="#">Reviews</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">contact us</a></li>
+                            <li><a href="#">Visit Us</a></li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                </li>
+                <li class="last1"><a href="#" class="logo1"><img src="images/logo.png" width="399" height="20" alt="logo"></a></li>
+                
+                
+                <li><a href="#">inside</a>
+                	<div class="sub-menu">
+                        <ul>
+                            <li><a href="#">#YoUniversalstandard</a></li>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">facebook Pinterest</a></li>
+                            <li><a href="#">Tumblr</a></li>
+                            <li><a href="#">Blog</a></li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                </li>
+                <li class="last"><a href="#">Showroom</a></li>
+            </ul>
+           
+            
+            <div class="clear"></div>
+        </nav>
+    </div>
+</header>
+<!--header end-->
+<!--banner-->
+<div class="inner-banner">
+	<div class="inner-banner-in" style="background:url(images/inner-banner.jpg) no-repeat; background-size:cover; ">
+        <div class="container">
+            <div class="title">
+            <h2>Jeans</h2>
+            </div>
+         </div>
+    </div>
+</div>
+<!--banner emd-->
+<div class="main-section">
+	<div class="container">
+    	<div class="block_main">
+    	<div class="block">
+        	<div class="block-in">
+            	<figure><img src="images/img1.jpg" width="368" height="368" alt="img"></figure>
+                <div class="hover-block">
+                	<div class="tbl">
+                	<div class="icon"><a href="#"><img src="images/icon8.png" width="12" height="12" alt="icon"></a></div>
+                    <div class="sizes-block-main">
+                    <div class="sizes-block">
+                    	<a class="add">+ Quick Add</a>
+                        <ul class="size1">
+                        	<li>
+                            	<a>
+                            	<span>XS</span>
+                                10-12
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>S</span>
+                                14-16
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>M</span>
+                                18-20
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>L</span>
+                                22-24
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>XL</span>
+                                26-28
+                                </a>
+                            </li>
+                        </ul>
+                       <ul class="size2">
+                        	<li><a href="#">10</a></li>
+                            <li><a href="#">12</a></li>
+                            <li><a href="#">14</a></li>
+                            <li><a href="#">16</a></li>
+                            <li><a href="#">18</a></li>
+                            <li><a href="#">20</a></li>
+                            <li><a href="#">22</a></li>
+                            <li><a href="#">24</a></li>
+                            <li><a href="#">26</a></li>
+                            <li><a href="#">28</a></li>
+                        </ul>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <p>Seine Slouch Jeans <br> <em>Bistressed Black</em> </p>
+            <small>$90</small>
+        </div>
+        <div class="block">
+        	<div class="block-in">
+            	<figure><img src="images/img1.jpg" width="368" height="368" alt="img"></figure>
+                <div class="hover-block">
+                	<div class="tbl">
+                	<div class="icon"><a href="#"><img src="images/icon8.png" width="12" height="12" alt="icon"></a></div>
+                    <div class="sizes-block-main">
+                    <div class="sizes-block">
+                    	<a class="add">+ Quick Add</a>
+                        <ul class="size1">
+                        	<li>
+                            	<a>
+                            	<span>XS</span>
+                                10-12
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>S</span>
+                                14-16
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>M</span>
+                                18-20
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>L</span>
+                                22-24
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>XL</span>
+                                26-28
+                                </a>
+                            </li>
+                        </ul>
+                       <ul class="size2">
+                        	<li><a href="#">10</a></li>
+                            <li><a href="#">12</a></li>
+                            <li><a href="#">14</a></li>
+                            <li><a href="#">16</a></li>
+                            <li><a href="#">18</a></li>
+                            <li><a href="#">20</a></li>
+                            <li><a href="#">22</a></li>
+                            <li><a href="#">24</a></li>
+                            <li><a href="#">26</a></li>
+                            <li><a href="#">28</a></li>
+                        </ul>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <p>Seine Slouch Jeans <br> <em>Bistressed Black</em> </p>
+            <small>$90</small>
+        </div>
+        <div class="block">
+        	<div class="block-in">
+            	<figure><img src="images/img1.jpg" width="368" height="368" alt="img"></figure>
+                <div class="hover-block">
+                	<div class="tbl">
+                	<div class="icon"><a href="#"><img src="images/icon8.png" width="12" height="12" alt="icon"></a></div>
+                    <div class="sizes-block-main">
+                    <div class="sizes-block">
+                    	<a class="add">+ Quick Add</a>
+                        <ul class="size1">
+                        	<li>
+                            	<a>
+                            	<span>XS</span>
+                                10-12
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>S</span>
+                                14-16
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>M</span>
+                                18-20
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>L</span>
+                                22-24
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>XL</span>
+                                26-28
+                                </a>
+                            </li>
+                        </ul>
+                       <ul class="size2">
+                        	<li><a href="#">10</a></li>
+                            <li><a href="#">12</a></li>
+                            <li><a href="#">14</a></li>
+                            <li><a href="#">16</a></li>
+                            <li><a href="#">18</a></li>
+                            <li><a href="#">20</a></li>
+                            <li><a href="#">22</a></li>
+                            <li><a href="#">24</a></li>
+                            <li><a href="#">26</a></li>
+                            <li><a href="#">28</a></li>
+                        </ul>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <p>Seine Slouch Jeans <br> <em>Bistressed Black</em> </p>
+            <small>$90</small>
+        </div>
+        
+        <div class="left-bolck">
+        <div class="block">
+        	<div class="block-in">
+            	<figure><img src="images/img2.jpg" width="754" height="816" alt="img"></figure>
+                <div class="hover-block">
+                	<div class="tbl">
+                	<div class="icon"><a href="#"><img src="images/icon8.png" width="12" height="12" alt="icon"></a></div>
+                    <div class="sizes-block-main">
+                    <div class="sizes-block">
+                    	<a class="add">+ Quick Add</a>
+                        <ul class="size1">
+                        	<li>
+                            	<a>
+                            	<span>XS</span>
+                                10-12
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>S</span>
+                                14-16
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>M</span>
+                                18-20
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>L</span>
+                                22-24
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>XL</span>
+                                26-28
+                                </a>
+                            </li>
+                        </ul>
+                       <ul class="size2">
+                        	<li><a href="#">10</a></li>
+                            <li><a href="#">12</a></li>
+                            <li><a href="#">14</a></li>
+                            <li><a href="#">16</a></li>
+                            <li><a href="#">18</a></li>
+                            <li><a href="#">20</a></li>
+                            <li><a href="#">22</a></li>
+                            <li><a href="#">24</a></li>
+                            <li><a href="#">26</a></li>
+                            <li><a href="#">28</a></li>
+                        </ul>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <p>Seine Slouch Jeans <br> <em>Bistressed Black</em> </p>
+            <small>$90</small>
+        </div>
+        </div>
+        <div class="right_block">
+        <div class="block">
+        	<div class="block-in">
+            	<figure><img src="images/img1.jpg" width="368" height="368" alt="img"></figure>
+                <div class="hover-block">
+                	<div class="tbl">
+                	<div class="icon"><a href="#"><img src="images/icon8.png" width="12" height="12" alt="icon"></a></div>
+                    <div class="sizes-block-main">
+                    <div class="sizes-block">
+                    	<a class="add">+ Quick Add</a>
+                        <ul class="size1">
+                        	<li>
+                            	<a>
+                            	<span>XS</span>
+                                10-12
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>S</span>
+                                14-16
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>M</span>
+                                18-20
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>L</span>
+                                22-24
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>XL</span>
+                                26-28
+                                </a>
+                            </li>
+                        </ul>
+                       <ul class="size2">
+                        	<li><a href="#">10</a></li>
+                            <li><a href="#">12</a></li>
+                            <li><a href="#">14</a></li>
+                            <li><a href="#">16</a></li>
+                            <li><a href="#">18</a></li>
+                            <li><a href="#">20</a></li>
+                            <li><a href="#">22</a></li>
+                            <li><a href="#">24</a></li>
+                            <li><a href="#">26</a></li>
+                            <li><a href="#">28</a></li>
+                        </ul>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <p>Seine Slouch Jeans <br> <em>Bistressed Black</em> </p>
+            <small>$90</small>
+        </div>
+        <div class="block">
+        	<div class="block-in">
+            	<figure><img src="images/img1.jpg" width="368" height="368" alt="img"></figure>
+                <div class="hover-block">
+                	<div class="tbl">
+                	<div class="icon"><a href="#"><img src="images/icon8.png" width="12" height="12" alt="icon"></a></div>
+                    <div class="sizes-block-main">
+                    <div class="sizes-block">
+                    	<a class="add">+ Quick Add</a>
+                        <ul class="size1">
+                        	<li>
+                            	<a>
+                            	<span>XS</span>
+                                10-12
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>S</span>
+                                14-16
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>M</span>
+                                18-20
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>L</span>
+                                22-24
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>XL</span>
+                                26-28
+                                </a>
+                            </li>
+                        </ul>
+                       <ul class="size2">
+                        	<li><a href="#">10</a></li>
+                            <li><a href="#">12</a></li>
+                            <li><a href="#">14</a></li>
+                            <li><a href="#">16</a></li>
+                            <li><a href="#">18</a></li>
+                            <li><a href="#">20</a></li>
+                            <li><a href="#">22</a></li>
+                            <li><a href="#">24</a></li>
+                            <li><a href="#">26</a></li>
+                            <li><a href="#">28</a></li>
+                        </ul>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <p>Seine Slouch Jeans <br> <em>Bistressed Black</em> </p>
+            <small>$90</small>
+        </div>
+        </div>
+        
+        <div class="block">
+        	<div class="block-in">
+            	<figure><img src="images/img1.jpg" width="368" height="368" alt="img"></figure>
+                <div class="hover-block">
+                	<div class="tbl">
+                	<div class="icon"><a href="#"><img src="images/icon8.png" width="12" height="12" alt="icon"></a></div>
+                    <div class="sizes-block-main">
+                    <div class="sizes-block">
+                    	<a class="add">+ Quick Add</a>
+                        <ul class="size1">
+                        	<li>
+                            	<a>
+                            	<span>XS</span>
+                                10-12
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>S</span>
+                                14-16
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>M</span>
+                                18-20
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>L</span>
+                                22-24
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>XL</span>
+                                26-28
+                                </a>
+                            </li>
+                        </ul>
+                       <ul class="size2">
+                        	<li><a href="#">10</a></li>
+                            <li><a href="#">12</a></li>
+                            <li><a href="#">14</a></li>
+                            <li><a href="#">16</a></li>
+                            <li><a href="#">18</a></li>
+                            <li><a href="#">20</a></li>
+                            <li><a href="#">22</a></li>
+                            <li><a href="#">24</a></li>
+                            <li><a href="#">26</a></li>
+                            <li><a href="#">28</a></li>
+                        </ul>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <p>Seine Slouch Jeans <br> <em>Bistressed Black</em> </p>
+            <small>$90</small>
+        </div>
+        <div class="block">
+        	<div class="block-in">
+            	<figure><img src="images/img1.jpg" width="368" height="368" alt="img"></figure>
+                <div class="hover-block">
+                	<div class="tbl">
+                	<div class="icon"><a href="#"><img src="images/icon8.png" width="12" height="12" alt="icon"></a></div>
+                    <div class="sizes-block-main">
+                    <div class="sizes-block">
+                    	<a class="add">+ Quick Add</a>
+                        <ul class="size1">
+                        	<li>
+                            	<a>
+                            	<span>XS</span>
+                                10-12
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>S</span>
+                                14-16
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>M</span>
+                                18-20
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>L</span>
+                                22-24
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>XL</span>
+                                26-28
+                                </a>
+                            </li>
+                        </ul>
+                       <ul class="size2">
+                        	<li><a href="#">10</a></li>
+                            <li><a href="#">12</a></li>
+                            <li><a href="#">14</a></li>
+                            <li><a href="#">16</a></li>
+                            <li><a href="#">18</a></li>
+                            <li><a href="#">20</a></li>
+                            <li><a href="#">22</a></li>
+                            <li><a href="#">24</a></li>
+                            <li><a href="#">26</a></li>
+                            <li><a href="#">28</a></li>
+                        </ul>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <p>Seine Slouch Jeans <br> <em>Bistressed Black</em> </p>
+            <small>$90</small>
+        </div>
+        <div class="block">
+        	<div class="block-in">
+            	<figure><img src="images/img1.jpg" width="368" height="368" alt="img"></figure>
+                <div class="hover-block">
+                	<div class="tbl">
+                	<div class="icon"><a href="#"><img src="images/icon8.png" width="12" height="12" alt="icon"></a></div>
+                    <div class="sizes-block-main">
+                    <div class="sizes-block">
+                    	<a class="add">+ Quick Add</a>
+                        <ul class="size1">
+                        	<li>
+                            	<a>
+                            	<span>XS</span>
+                                10-12
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>S</span>
+                                14-16
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>M</span>
+                                18-20
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>L</span>
+                                22-24
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>XL</span>
+                                26-28
+                                </a>
+                            </li>
+                        </ul>
+                       <ul class="size2">
+                        	<li><a href="#">10</a></li>
+                            <li><a href="#">12</a></li>
+                            <li><a href="#">14</a></li>
+                            <li><a href="#">16</a></li>
+                            <li><a href="#">18</a></li>
+                            <li><a href="#">20</a></li>
+                            <li><a href="#">22</a></li>
+                            <li><a href="#">24</a></li>
+                            <li><a href="#">26</a></li>
+                            <li><a href="#">28</a></li>
+                        </ul>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <p>Seine Slouch Jeans <br> <em>Bistressed Black</em> </p>
+            <small>$90</small>
+        </div>
+        
+        <div class="block">
+        	<div class="block-in">
+            	<figure><img src="images/img1.jpg" width="368" height="368" alt="img"></figure>
+                <div class="hover-block">
+                	<div class="tbl">
+                	<div class="icon"><a href="#"><img src="images/icon8.png" width="12" height="12" alt="icon"></a></div>
+                    <div class="sizes-block-main">
+                    <div class="sizes-block">
+                    	<a class="add">+ Quick Add</a>
+                        <ul class="size1">
+                        	<li>
+                            	<a>
+                            	<span>XS</span>
+                                10-12
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>S</span>
+                                14-16
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>M</span>
+                                18-20
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>L</span>
+                                22-24
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>XL</span>
+                                26-28
+                                </a>
+                            </li>
+                        </ul>
+                       <ul class="size2">
+                        	<li><a href="#">10</a></li>
+                            <li><a href="#">12</a></li>
+                            <li><a href="#">14</a></li>
+                            <li><a href="#">16</a></li>
+                            <li><a href="#">18</a></li>
+                            <li><a href="#">20</a></li>
+                            <li><a href="#">22</a></li>
+                            <li><a href="#">24</a></li>
+                            <li><a href="#">26</a></li>
+                            <li><a href="#">28</a></li>
+                        </ul>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <p>Seine Slouch Jeans <br> <em>Bistressed Black</em> </p>
+            <small>$90</small>
+        </div>
+        <div class="block">
+        	<div class="block-in">
+            	<figure><img src="images/img1.jpg" width="368" height="368" alt="img"></figure>
+                <div class="hover-block">
+                	<div class="tbl">
+                	<div class="icon"><a href="#"><img src="images/icon8.png" width="12" height="12" alt="icon"></a></div>
+                    <div class="sizes-block-main">
+                    <div class="sizes-block">
+                    	<a class="add">+ Quick Add</a>
+                        <ul class="size1">
+                        	<li>
+                            	<a>
+                            	<span>XS</span>
+                                10-12
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>S</span>
+                                14-16
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>M</span>
+                                18-20
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>L</span>
+                                22-24
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>XL</span>
+                                26-28
+                                </a>
+                            </li>
+                        </ul>
+                       <ul class="size2">
+                        	<li><a href="#">10</a></li>
+                            <li><a href="#">12</a></li>
+                            <li><a href="#">14</a></li>
+                            <li><a href="#">16</a></li>
+                            <li><a href="#">18</a></li>
+                            <li><a href="#">20</a></li>
+                            <li><a href="#">22</a></li>
+                            <li><a href="#">24</a></li>
+                            <li><a href="#">26</a></li>
+                            <li><a href="#">28</a></li>
+                        </ul>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <p>Seine Slouch Jeans <br> <em>Bistressed Black</em> </p>
+            <small>$90</small>
+        </div>
+        <div class="block">
+        	<div class="block-in">
+            	<figure><img src="images/img1.jpg" width="368" height="368" alt="img"></figure>
+                <div class="hover-block">
+                	<div class="tbl">
+                	<div class="icon"><a href="#"><img src="images/icon8.png" width="12" height="12" alt="icon"></a></div>
+                    <div class="sizes-block-main">
+                    <div class="sizes-block">
+                    	<a class="add">+ Quick Add</a>
+                        <ul class="size1">
+                        	<li>
+                            	<a>
+                            	<span>XS</span>
+                                10-12
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>S</span>
+                                14-16
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>M</span>
+                                18-20
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>L</span>
+                                22-24
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>XL</span>
+                                26-28
+                                </a>
+                            </li>
+                        </ul>
+                       <ul class="size2">
+                        	<li><a href="#">10</a></li>
+                            <li><a href="#">12</a></li>
+                            <li><a href="#">14</a></li>
+                            <li><a href="#">16</a></li>
+                            <li><a href="#">18</a></li>
+                            <li><a href="#">20</a></li>
+                            <li><a href="#">22</a></li>
+                            <li><a href="#">24</a></li>
+                            <li><a href="#">26</a></li>
+                            <li><a href="#">28</a></li>
+                        </ul>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <p>Seine Slouch Jeans <br> <em>Bistressed Black</em> </p>
+            <small>$90</small>
+        </div>
+        
+        <div class="right_block">
+        <div class="block">
+        	<div class="block-in">
+            	<figure><img src="images/img1.jpg" width="368" height="368" alt="img"></figure>
+                <div class="hover-block">
+                	<div class="tbl">
+                	<div class="icon"><a href="#"><img src="images/icon8.png" width="12" height="12" alt="icon"></a></div>
+                    <div class="sizes-block-main">
+                    <div class="sizes-block">
+                    	<a class="add">+ Quick Add</a>
+                        <ul class="size1">
+                        	<li>
+                            	<a>
+                            	<span>XS</span>
+                                10-12
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>S</span>
+                                14-16
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>M</span>
+                                18-20
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>L</span>
+                                22-24
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>XL</span>
+                                26-28
+                                </a>
+                            </li>
+                        </ul>
+                       <ul class="size2">
+                        	<li><a href="#">10</a></li>
+                            <li><a href="#">12</a></li>
+                            <li><a href="#">14</a></li>
+                            <li><a href="#">16</a></li>
+                            <li><a href="#">18</a></li>
+                            <li><a href="#">20</a></li>
+                            <li><a href="#">22</a></li>
+                            <li><a href="#">24</a></li>
+                            <li><a href="#">26</a></li>
+                            <li><a href="#">28</a></li>
+                        </ul>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <p>Seine Slouch Jeans <br> <em>Bistressed Black</em> </p>
+            <small>$90</small>
+        </div>
+        <div class="block">
+        	<div class="block-in">
+            	<figure><img src="images/img1.jpg" width="368" height="368" alt="img"></figure>
+                <div class="hover-block">
+                	<div class="tbl">
+                	<div class="icon"><a href="#"><img src="images/icon8.png" width="12" height="12" alt="icon"></a></div>
+                    <div class="sizes-block-main">
+                    <div class="sizes-block">
+                    	<a class="add">+ Quick Add</a>
+                        <ul class="size1">
+                        	<li>
+                            	<a>
+                            	<span>XS</span>
+                                10-12
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>S</span>
+                                14-16
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>M</span>
+                                18-20
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>L</span>
+                                22-24
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>XL</span>
+                                26-28
+                                </a>
+                            </li>
+                        </ul>
+                       <ul class="size2">
+                        	<li><a href="#">10</a></li>
+                            <li><a href="#">12</a></li>
+                            <li><a href="#">14</a></li>
+                            <li><a href="#">16</a></li>
+                            <li><a href="#">18</a></li>
+                            <li><a href="#">20</a></li>
+                            <li><a href="#">22</a></li>
+                            <li><a href="#">24</a></li>
+                            <li><a href="#">26</a></li>
+                            <li><a href="#">28</a></li>
+                        </ul>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <p>Seine Slouch Jeans <br> <em>Bistressed Black</em> </p>
+            <small>$90</small>
+        </div>
+        </div>
+        <div class="left-bolck">
+        <div class="block">
+        	<div class="block-in">
+            	<figure><img src="images/img2.jpg" width="754" height="816" alt="img"></figure>
+                <div class="hover-block">
+                	<div class="tbl">
+                	<div class="icon"><a href="#"><img src="images/icon8.png" width="12" height="12" alt="icon"></a></div>
+                    <div class="sizes-block-main">
+                    <div class="sizes-block">
+                    	<a class="add">+ Quick Add</a>
+                        <ul class="size1">
+                        	<li>
+                            	<a>
+                            	<span>XS</span>
+                                10-12
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>S</span>
+                                14-16
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>M</span>
+                                18-20
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>L</span>
+                                22-24
+                                </a>
+                            </li>
+                            <li>
+                            	<a>
+                            	<span>XL</span>
+                                26-28
+                                </a>
+                            </li>
+                        </ul>
+                       <ul class="size2">
+                        	<li><a href="#">10</a></li>
+                            <li><a href="#">12</a></li>
+                            <li><a href="#">14</a></li>
+                            <li><a href="#">16</a></li>
+                            <li><a href="#">18</a></li>
+                            <li><a href="#">20</a></li>
+                            <li><a href="#">22</a></li>
+                            <li><a href="#">24</a></li>
+                            <li><a href="#">26</a></li>
+                            <li><a href="#">28</a></li>
+                        </ul>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <p>Seine Slouch Jeans <br> <em>Bistressed Black</em> </p>
+            <small>$90</small>
+        </div>
+        </div>
+        
+        <div class="clear"></div>
+        </div>
+        
+        <!--<section class="shop-section">
+      <div class="left">
+        <div class="top">
+          <div class="box left">
+            <video class="video-box" loop muted="true" autoplay autostart="true" poster="" >
+              <source src="videos/box-video-feet.mp4" type="video/mp4">
+              Your browser doesn't support HTML5 video tag.
+            </video>
+          </div>
+          <div class="box right "></div>
+        </div>
+        <a href="#">
+          <div class="box link-box ">
+          <img src="images/shop-men.jpg" width="701" height="703" alt="img">
+            <div class="shop-link-wrapper">
+              <div class="shop-link">Shop Men</div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="right">
+        <a href="#">
+          <div class="box link-box">
+          	<img src="images/shop-women-new.jpg" width="701" height="703" alt="img">
+            <div class="shop-link-wrapper">
+              <div class="shop-link">Shop Women</div>
+            </div>
+          </div>
+        </a>
+        <div class="bottom">
+          <div class="box left">
+            <video class="video-box" loop muted="true" autoplay autostart="true" poster="" >
+              <source src="videos/box-video-shoes.mp4" type="video/mp4">
+              Your browser doesn't support HTML5 video tag.
+            </video>
+          </div>
+          <div class="box right"></div>
+        </div>
+      </div>
+      <div class="clear"></div>
+  </section>-->
+    </div>
+</div>
+
+<!-- footer -->
+<footer class="footer">
+	<div class="footer-in">
+    	<div class="text-box">
+    	<input type="text" value="JOIN OUR EMAIL LIST" class="text-fld" onclick="this.value='';" onfocus="this.select()" onblur="this.value=!this.value?'JOIN OUR EMAIL LIST':this.value;">
+       <a href="javascript:void(0);"> <span>+</span></a>
+        </div>
+    	<div class="fot-nav">
+        	<ul>
+            	<li><a href="#">Your Account</a></li>
+                <li><a href="#">Returns</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li class="no_bg"><a href="#">Privacy Policy</a></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <div class="icons">
+        	
+        	<ul>
+            	<li>FOLLOW US</li>
+                <li><a href="#"><img src="images/icon3.jpg" width="8" height="12" alt="icon"></a></li>
+                <li><a href="#"><img src="images/icon4.jpg" width="10" height="12" alt="icon"></a></li>
+                <li><a href="#"><img src="images/icon5.jpg" width="10" height="12" alt="icon"></a></li>
+                <li><a href="#"><img src="images/icon6.jpg" width="7" height="12" alt="icon"></a></li>
+                <li><a href="#"><img src="images/icon7.jpg" width="11" height="12" alt="icon"></a></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</footer>
+<!--footer end-->
+
+</div>
+<!--wrapper end-->
+</body>
+ 
+</html>
+>>>>>>> origin/master

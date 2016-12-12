@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="description" content="Your description">
+<meta name="keywords" content="keyword1 keyword2">
+
+
+<title>Universal Standard 2.0</title>
+>>>>>>> origin/master
+<!-- SET: FAVICON -->
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+
+<link href="https://fonts.googleapis.com/css?family=Hind+Vadodara:300,400,500,600,700" rel="stylesheet">
+<!--[if lt IE 9]>
+<script type="text/javascript">
+  document.createElement("header");
+  document.createElement("nav");
+  document.createElement("section");
+  document.createElement("article");
+  document.createElement("aside");
+  document.createElement("footer");
+</script>
+<![endif]-->
+<!-- SET: STYLESHEET -->
+<link rel="stylesheet" type="text/css" href="css/owl.theme.default.css">
+
+<!-- -->
+<link rel="stylesheet" type="text/css" href="css/slick.css">
+<link rel="stylesheet" type="text/css" href="css/slick-theme.css">
+<!-- -->
+
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/responsive.css">
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script src="js/owl.carousel.js"></script>
+<script src="js/slick.js"></script>
+
+<script type="text/javascript" src="js/lightbox.js"></script>
+
+
+<script type="text/javascript">
+$(document).ready(function () {
+	$('.logo1').clone().appendTo('.logo');
+	$('.nav').clone().appendTo('.navigetion');
+	
+	$(".nav ul li .sub-menu").parent().prepend('<span></span>') ;
+	
+	 if ($(window).width() < 767) {
+		 $(".nav ul li a").click(function() {
+			$(this).parent().find('.sub-menu').slideToggle();
+			$(this).parent().toggleClass('active');
+			$(this).parent().siblings().removeClass('active');
+			$(this).parent().siblings().find('.sub-menu').slideUp();
+		});
+	 }	
+	$('.nav-icon').click(function(e) {
+		$('.nav-icon').toggleClass('open');
+		$('body').toggleClass('open');
+	});
+	
+	$(".nav ul li:has('.sub-menu')").hover(function(){
+	$(this).parent().parent().parent().css("background", "rgba(255, 255, 255, 0.81)");
+	}, function(){
+	$(this).parent().parent().parent().css("background", "none");
+	});
+	
+	$('.search-icon').click(function(e) {
+         $(".text-fld1").toggleClass('active')
+     });
+	
+	$('.size1, .size2').hide();
+	$('.block a.add').click(function(e) {
+		$(this).hide();
+		$(this).parent()
+		.find('.size1')
+		.show()
+		.click(function(e) {
+			$(this).hide();
+            $(this).parent().find('.size2').show();
+        });;
+    });
+	
+	$('.slider').on('init', function(ev, el){
+		$('video').each(function () {
+			this.play();
+		});
+	});	
+	
+	 $('.slider').slick({
+		infinite: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: true,
+		fade: true,
+		asNavFor: '.slider-nav'
+	});
+
+$('.slider-nav').slick({
+	infinite: true,
+	slidesToShow: 5,
+	slidesToScroll: 1,
+	asNavFor: '.slider-for',
+	dots: false,
+	focusOnSelect: true,
+	
+});    
+
+$('.colors a').click(function(e) {
+    $(this).addClass('active');
+	$(this).siblings().removeClass('active');
+});
+
+$('.size-chart ul li a').click(function(e) {
+    $(this).addClass('active');
+	$(this).parent().siblings().find('a').removeClass('active');
+});
+
+$('.top-right a').click(function(e) {
+	
+    $('body').toggleClass('open1');
+});
+$('a.close').click(function(e) {
+    $('body').removeClass('open1');
+});
+});
+
+$(function () {
+    $('.add').on('click',function(){
+        var $qty=$(this).closest('p').find('.qty');
+        var currentVal = parseInt($qty.val());
+        if (!isNaN(currentVal)) {
+            $qty.val(currentVal + 1);
+        }
+    });
+    $('.minus').on('click',function(){
+        var $qty=$(this).closest('p').find('.qty');
+        var currentVal = parseInt($qty.val());
+        if (!isNaN(currentVal) && currentVal > 0) {
+            $qty.val(currentVal - 1);
+        }
+    });
+});
+</script>
+</head>
+
+<body>
+<!--wrapper-->
+<div class="navigetion"></div>
+<div class="drawer">
+	<div class="title1">
+    	<h3>My Bag</h3>
+        <a href="#" class="close">&times;</a>
+        <div class="clear"></div>
+    </div>
+    <ul>
+    	<li>
+        	<div class="left-img">
+            	<img src="images/img5.jpg" alt="">
+            </div>
+            <div class="right-cont">
+            	<a href="#">Elbe Shirt</a>
+                <p>L_22-24 / Universal Black</p>
+                <p class="add-block">
+                    <span id="minus1" class="minus">-</span>
+                    <input id="qty1" type="text" value="1" class="qty"/>
+                    <span id="add1" class="add">+</span>
+                  	
+                    
+                </p>
+                <small>$90</small>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </li>
+    </ul>
+    <div class="payment">
+    	<div class="grid__item two-thirds">
+        	<p>SUBTOTAL</p>
+        </div>
+        <div class="grid__item two-thirds text-right">
+        	<p>$160.00</p>
+        </div>
+        <div class="clear"></div>
+        <p class="text-center ajaxcart__note">Shipping &amp; taxes calculated at checkout</p>
+        <button type="submit" class="btn--secondary btn--full cart__checkout" name="checkout">
+          Check Out &rarr;
+        </button>
+        <div class="additional_checkout_buttons"><button name="goto_pp" type="submit" id="paypal-express-button" class="additional-checkout-button additional-checkout-button--paypal-express" value="paypal_express">Checkout with <img alt="PayPal" src="images/easy-checkout-btn-paypal-cadb680457a51ea1df32214b16adad91083c80679c7f5017e35c731832e59b90.png" /></button></div>
+        
+      </div>
+        
+    </div>
+</div>
+<div class="wrapper wrapper1">
+
+<!--header-->
+<header class="header">
+    <div class="top-section">
+    	<div class="top-left">
+        	<a href="#">Login</a>
+            <a href="javascript:void(0);" class="search-icon"><img src="images/icon1.png" width="12" height="12" alt="icon1"></a>
+            <input type="text" value="search" class="text-fld1" onclick="this.value='';" onfocus="this.select()" onblur="this.value=!this.value?'search':this.value;">
+            <div class="clear"></div>
+        </div>
+        <div class="top-right">
+        	<p>Free US Shipping & Returns<br>
+Free International Shipping Over $300</p>
+            <a href="#">3</a>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="nav-main">
+    	<div class="logo"></div>
+    	<div class="nav-icon"><span></span><span></span><span></span></div>
+        <div class="clear"></div>
+        <nav class="nav">
+            <ul>
+                <li><a href="#">Shop</a>
+                    <div class="sub-menu">
+                        <ul>
+                            <li><a href="#">STarter Kit</a></li>
+                            <li><a href="#">Coming Soon</a></li>
+                            <li><a href="#">Best Sellers</a></li>
+                            <li><a href="#">Inspiration</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">Dresses</a></li>
+                            <li><a href="#">Tops/tees</a></li>
+                            <li><a href="#">Sweaters</a></li>
+                            <li><a href="#">Jeans/pants </a></li>
+                            <li><a href="#">skirts</a></li>
+                            <li><a href="#">jackets/outerwear</a></li>
+                            <li><a href="#">See all</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">Accessories</a></li>
+                            <li><a href="#">Gift Cards</a></li>
+                            <li><a href="#">Showroom</a></li>
+                            <li><a href="#">Promotions</a></li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                </li>
+                <li><a href="#">About Us</a>
+                    <div class="sub-menu">
+                        <ul>
+                            <li><a href="#">Our Story</a></li>
+                            <li><a href="#">Material Matters</a></li>
+                            <li><a href="#">Press</a></li>
+                            <li><a href="#">Reviews</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">contact us</a></li>
+                            <li><a href="#">Visit Us</a></li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                </li>
+                <li class="last1"><a href="#" class="logo1"><img src="images/logo.png" width="399" height="20" alt="logo"></a></li>
+                
+                
+                <li><a href="#">inside</a>
+                	<div class="sub-menu">
+                        <ul>
+                            <li><a href="#">#YoUniversalstandard</a></li>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">facebook Pinterest</a></li>
+                            <li><a href="#">Tumblr</a></li>
+                            <li><a href="#">Blog</a></li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                </li>
+                <li class="last"><a href="#">Showroom</a></li>
+            </ul>
+           
+            
+            <div class="clear"></div>
+        </nav>
+    </div>
+</header>
+<!--header end-->
+<!--banner-->
+
+<!--banner emd-->
+<div class="main-section-inner2">
+	<div class="container">
+    		<div class="left-section">
+            	<div class="slider slider-for">
+                    <div><a data-group="set1" href="images/img3.jpg" class="html5lightbox" data-width="700" data-height="500"><img src="images/img3.jpg" width="564" height="736" alt="img3"></a><a data-group="set1" href="images/img3.jpg" class="html5lightbox" data-width="700" data-height="500"><span>+</span></a></div>
+                    <div><a data-group="set1" href="images/img2.jpg" class="html5lightbox" data-width="700" data-height="500"><img src="images/img3.jpg" width="564" height="736" alt="img3"></a><a data-group="set1" href="images/img3.jpg" class="html5lightbox" data-width="700" data-height="500"><span>+</span></a></div>
+                    <div><a data-group="set1" href="images/img5.jpg" class="html5lightbox" data-width="700" data-height="500"><img src="images/img3.jpg" width="564" height="736" alt="img3"></a><a data-group="set1" href="images/img3.jpg" class="html5lightbox" data-width="700" data-height="500"><span>+</span></a></div>
+                    <div><a data-group="set1" href="images/img3.jpg" class="html5lightbox" data-width="700" data-height="500"><img src="images/img3.jpg" width="564" height="736" alt="img3"></a><a data-group="set1" href="images/img3.jpg" class="html5lightbox" data-width="700" data-height="500"><span>+</span></a></div>
+                    <div>
+                        <a data-group="set1" href="videos/sea_and_girl.mp4" class="html5lightbox" data-width="700" data-height="500"><video width="100%" height="100%" video loop muted="" style="background-color:#000;">
+                           <source src="videos/sea_and_girl.mp4" type="video/mp4">
+                           <source src="videos/sea_and_girl.webm" type="video/webm">
+                           <source src="videos/sea_and_girl.ogg" type="video/ogg">
+                        </video></a>
+                    </div>
+                </div>
+                <div class="thumb-slider slider-nav">
+                    <div><img src="images/thamb-img1.jpg" width="92" height="92" alt=""></div>
+                    <div><img src="images/thamb-img1.jpg" width="92" height="92" alt=""></div>
+                    <div><img src="images/thamb-img1.jpg" width="92" height="92" alt=""></div>
+                    <div><img src="images/thamb-img1.jpg" width="92" height="92" alt=""></div>
+                    <div><img src="images/video.jpg" width="92" height="92" alt=""></div>
+                </div>
+                <div class="clear"></div>
+                <div class="items-block">
+            	<h3>YOU SHOULD KNOW</h3>
+            	<ul>
+                	<li>
+                    	<div class="block1">
+                        	<a data-group="set2" href="images/img4.jpg" class="html5lightbox"><figure><img src="images/img4.jpg" width="178" height="240" alt="img4"></figure></a>
+                            <a data-group="set2" href="images/img4.jpg" class="html5lightbox"><span>+</span></a>
+                            <p>Lorem ipsum dolor sit amet, con sectetur adipisicing elit, sed do eius. </p>
+                        </div>
+                    </li>
+                    <li>
+                    	<div class="block1">
+                        	<a data-group="set2" href="images/img6.jpg" class="html5lightbox"><figure><img src="images/img4.jpg" width="178" height="240" alt="img4"></figure></a>
+                            <a data-group="set2" href="images/img6.jpg" class="html5lightbox"><span>+</span></a>
+                            <p>Lorem ipsum dolor sit amet, con sectetur adipisicing elit, sed do eius. </p>
+                        </div>
+                    </li>
+                    <li>
+                    	<div class="block1">
+                        	<a data-group="set2" href="images/img4.jpg" class="html5lightbox"><figure><img src="images/img4.jpg" width="178" height="240" alt="img4"></figure></a>
+                            <a data-group="set2" href="images/img4.jpg" class="html5lightbox"><span>+</span></a>
+                            <p>Lorem ipsum dolor sit amet, con sectetur adipisicing elit, sed do eius. </p>
+                        </div>
+                    </li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+            </div>
+
+            <div class="right-section">
+            	<div class="right-topblock">
+                	<h4>Seine Slouch Jeans<br> $90</h4>
+                    <div class="colors">
+                    	<span>Colors <small>Dark Indigo</small> </span>
+                        <a href="#">&nbsp;</a>
+                        <a href="#" class="active">&nbsp;</a>
+                        <a href="#">&nbsp;</a>
+                    </div>
+                    <div class="size-chart">
+                    	<h3>Size Chart</h3>
+                        <div class="size-chart size-chart1">
+                        <span>SIZE</span>
+                        <ul>
+                        	<li><a href="#">10</a></li>
+                            <li><a href="#">12</a></li>
+                            <li><a href="#">14</a></li>
+                            <li><a href="#">16</a></li>
+                            <li><a href="#">18</a></li>
+                        
+                        	<li><a href="#">20</a></li>
+                            <li><a href="#">22</a></li>
+                            <li><a href="#">24</a></li>
+                            <li><a href="#">26</a></li>
+                            <li><a href="#">28</a></li>
+                        </ul>
+                    </div>
+                        <span>SIZE</span>
+                        <ul>
+                        	<li><a href="#">XS</a></li>
+                            <li><a href="#">S</a></li>
+                            <li><a href="#">M</a></li>
+                            <li><a href="#">L</a></li>
+                            <li><a href="#">XL</a></li>
+                        </ul>
+                    </div>
+                    <a href="#" class="btn">Add To BAG</a>
+                    <div class="clear"></div>
+                    <a href="#" class="btn1">Add To Favorites</a>
+                </div>
+                <div class="details">
+                	<h3>Details</h3>
+                    <p>Model is 5’10” wearing size 16 <br> Relaxed fit<br> 
+                        100% Egyptian Cotton, <a href="#">learn more here</a>  <br>
+                        Dry clean<br>
+                        Signature reversed stitching detail on the cuffs et dolore magna aliqua<br>
+                        Wear with <a href="#">Loire Ribbed Tank</a> <br>
+                        Questions about fit? Email <a href="mailto:fit@everlane.com" class="mail">fit@everlane.com</a></p>
+                        
+                        <h3>Description</h3>
+                        <p>Warm, soft, lightweight, and timeless—this cashmere crewneck is guaranteed to be a favorite. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, umquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. this cashmere crewneck is guaranteed to be a favorite. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, umquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. </p>
+                        
+                        <a href="#" class="review">Submit a review</a>
+
+
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="items-block1">
+            	<h3>You’ll also like</h3>
+            	<ul>
+                	<li>
+                    	<div class="block1">
+                        	<a href="#"><figure><img src="images/img5.jpg" width="272" height="368" alt="img"></figure></a>
+                            <div class="price">
+                            	<p>Seine Slouch Jeans <br> <em>Bistressed Black</em> </p>
+                            	<small>$90</small>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                    	<div class="block1">
+                        	<a href="#"><figure><img src="images/img6.jpg" width="272" height="368" alt="img"></figure></a>
+                            <div class="price">
+                            	<p>Seine Slouch Jeans <br> <em>Bistressed Black</em> </p>
+                            	<small>$90</small>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                    	<div class="block1">
+                        	<a href="#"><figure><img src="images/img5.jpg" width="272" height="368" alt="img"></figure></a>
+                            <div class="price">
+                            	<p>Seine Slouch Jeans <br> <em>Bistressed Black</em> </p>
+                            	<small>$90</small>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                    	<div class="block1">
+                        	<a href="#"><figure><img src="images/img6.jpg" width="272" height="368" alt="img"></figure></a>
+                            <div class="price">
+                            	<p>Seine Slouch Jeans <br> <em>Bistressed Black</em> </p>
+                            	<small>$90</small>
+                            </div>
+
+                        </div>
+                    </li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+    </div>
+</div>
+
+<!-- footer -->
+<footer class="footer">
+	<div class="footer-in">
+    	<div class="text-box">
+    	<input type="text" value="JOIN OUR EMAIL LIST" class="text-fld" onclick="this.value='';" onfocus="this.select()" onblur="this.value=!this.value?'JOIN OUR EMAIL LIST':this.value;">
+       <a href="javascript:void(0);"> <span>+</span></a>
+        </div>
+    	<div class="fot-nav">
+        	<ul>
+            	<li><a href="#">Your Account</a></li>
+                <li><a href="#">Returns</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li class="no_bg"><a href="#">Privacy Policy</a></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <div class="icons">
+        	
+        	<ul>
+            	<li>FOLLOW US</li>
+                <li><a href="#"><img src="images/icon3.jpg" width="8" height="12" alt="icon"></a></li>
+                <li><a href="#"><img src="images/icon4.jpg" width="10" height="12" alt="icon"></a></li>
+                <li><a href="#"><img src="images/icon5.jpg" width="10" height="12" alt="icon"></a></li>
+                <li><a href="#"><img src="images/icon6.jpg" width="7" height="12" alt="icon"></a></li>
+                <li><a href="#"><img src="images/icon7.jpg" width="11" height="12" alt="icon"></a></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</footer>
+<!--footer end-->
+
+</div>
+<!--wrapper end-->
+</body>
+ 
+</html>

@@ -35,6 +35,8 @@ header,nav,section,article,aside,footer,hgroup {display: block;}
 input{ -webkit-appearance: none; -moz-appearance: none; -ms-appearance: none;-o-appearance: none; appearance: none; border-radius:0; }
 /*----------------------------------------------------------------------------------*/
 
+
+
 @font-face {
   font-family: 'Futura-Light';
   src: url('../fonts/Futura-Light/Futura-Light.eot') format('embedded-opentype'),
